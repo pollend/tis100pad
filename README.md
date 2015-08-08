@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/pollend/tis100pad.png?label=ready&title=Ready)](https://waffle.io/pollend/tis100pad)
 # tis100pad
 
 [![Stories in Ready](https://badge.waffle.io/pollend/tis100pad.svg?label=ready&title=Ready)](http://waffle.io/pollend/tis100pad)
