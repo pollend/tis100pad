@@ -2,7 +2,7 @@
 
 [![Stories in Ready](https://badge.waffle.io/pollend/tis100pad.svg?label=ready&title=Ready)](http://waffle.io/pollend/tis100pad)
 
-A web site for uploading and sharing solutions for the game TIS-100. http://www.tis100pad.com
+A web site for uploading and sharing solutions for the game TIS-100. 
 
 ##Feature
 ###Current
