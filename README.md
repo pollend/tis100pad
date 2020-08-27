@@ -4,19 +4,20 @@
 
 A web site for uploading and sharing solutions for the game TIS-100. 
 
-##Feature
-###Current
+## Feature
+### Current
+
 * A user account system
 * Anonmous user or registerd user can submit solution
 * Registered user can submit problems
 * Both solutions and problems can be reviewied by Anonmous/Registed users and resaved as seperate entries
 
-###Planned
+### Planned
 * Solution Validation
 
-##Installing
+## Installing
 
-###Required Libraries
+### Required Libraries
 
 system libraries
 
