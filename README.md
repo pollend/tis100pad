@@ -46,9 +46,9 @@ pip install psutil
 pip install alembic
 ```
 
-###Install
+### Install
 
-####Configuration
+#### Configuration
 
 under `src/server/app/config.py.sample` is the sample configuration file for the server
 
@@ -110,13 +110,13 @@ run these four commands in the root directory of the project to install all the 
 
 between each pull from source `grunt migrate` is needed to upgrade the current database to reflect the current release
 
-####Site Configuration
+#### Site Configuration
 
 It's recommend to configure the site using [gunicorn](http://gunicorn.org/) using ngnix as a proxy.
 
 more information about deployment can be found here: http://docs.gunicorn.org/en/latest/deploy.html
 
-##Modifying
+## Modifying
 
 ```
 grunt wtch
@@ -130,5 +130,5 @@ grunt clean-up-bin
 
 This command will clear the bin directory
 
-#Licence
+# Licence
 MIT
