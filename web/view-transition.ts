@@ -1,0 +1,34 @@
+
+export interface DocumentSupportingViewTransitionAPI {
+  startViewTransition(
+    updateCallback: () => Promise<void> | void,
+  ): IViewTransition
+}
+
+export interface IViewTransition {
+  finished: Promise<void>
+  ready: Promise<void>
+  updateCallbackDone: Promise<void>
+  skipTransition(): void
+}
+
+export const docWithViewTransitionAPI =
+  document as unknown as DocumentSupportingViewTransitionAPI
+
+export const supportsViewTransitions =
+  !!docWithViewTransitionAPI.startViewTransition
+
+export function modifyViewTransition(
+  callback: (...args: any[]) => void ,
+  mods: {[key: string]: Set<string>},
+): (...args: any[]) => void  {
+  if (mods['viewtransition'] && supportsViewTransitions) {
+    const cb = callback // I hate javascript
+    callback = (...args: any[]) =>
+      document.startViewTransition(() => cb(...args))
+  }
+
+  return callback
+}
+
+

@@ -9,5 +9,10 @@
 bin/*
 node_modules/*
 bower_components/*
-
 config.py
+
+/target
+static/assets
+static/manifest.json
+node_modules/
+
