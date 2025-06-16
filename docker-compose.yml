@@ -1,12 +1,12 @@
 # docker-compose.yml for travis ci testing
 services:
-  emr:
+  tis100:
     restart: always
     build:
       context: .
       dockerfile: dev.Dockerfile 
     ports:
-      - "3000:3000"
+      - "3001:3001"
     volumes:
     - ./src:/app/src:ro
     - ./static:/app/static:ro
@@ -16,19 +16,20 @@ services:
     - ./dev.toml:/app/app.toml:ro
     - ./migrations:/app/migrations:ro
     environment:
-      DATABASE_URL: postgres://root:password@postgres:5432/db
+      DATABASE_URL: postgres://root:password@postgres:6433/db
     depends_on:
     - postgres
   postgres:
     image: postgres:latest  # Use the official PostgreSQL image
-    container_name: postgres_db
+    container_name: tis100_postgres_db
     restart: always
     ports:
-      - "5432:5432"  # Map host port 5432 to container port 5432
+      - "6433:6433"  # Map host port 5432 to container port 5433
     environment:
       POSTGRES_USER: root 
       POSTGRES_PASSWORD: password 
       POSTGRES_DB: db
+      PGPORT: 6433 
     volumes:
       - pg_db:/var/lib/postgresql/data # Mount a volume for persistence
 volumes:

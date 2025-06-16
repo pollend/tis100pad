@@ -1,0 +1,7 @@
+password_salt = "asdfa0n29j1mn123"
+url = "http://localhost:3001"
+log = "debug,tower_http=debug"
+
+[db]
+url = "postgres://root:password@postgres:6433/db"
+

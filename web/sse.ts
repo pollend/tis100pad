@@ -1,7 +1,7 @@
 import { Alpine,  ElementWithXAttributes } from "alpinejs";
 import { fetchEventSource, FetchEventSourceInit, EventSourceMessage } from "./fetch-event-source";
 import { isBoolString } from "./utils";
-import { docWithViewTransitionAPI, supportsViewTransitions } from "./view-transtion";
+import { docWithViewTransitionAPI, supportsViewTransitions } from "./view-transition";
 
 export const STARTED = 'started'
 export const FINISHED = 'finished'
