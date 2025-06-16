@@ -1,6 +1,7 @@
 import { morph } from '@alpinejs/morph';
 import Alpine, { data } from 'alpinejs';
 import { sse } from './sse';
+import './index.css'
 window["Alpine"] = Alpine
 
 Alpine.plugin(morph);
