@@ -117,7 +117,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                 ));
             // build our application with a route
             let app = Router::new()
-                //.route("/", get(view::chart::patient_list_root))
+                .merge(view::view_routes())
                 .nest_service("/static", ServeDir::new("static"))
                 .layer(session_layer)
                 .layer(TraceLayer::new_for_http())

@@ -18,6 +18,7 @@ export default defineConfig({
     },
     outDir: 'static',
     emptyOutDir: true, // also necessary
-  }, 
+  },
+  base: '/static/'
 })
 

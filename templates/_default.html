@@ -1,6 +1,108 @@
 {% extends "_root.html" %}
+{% import "bootstrap_icons.html" as boostrap_icon %}
+
+{%- macro nav_element() -%}
+
+{% endmacro %}
 
 {% block content %}
+    <div class="md:w-2/3 lg:w-3/4 ml-auto mr-auto">
+      {#
+      <div class="overlay"  ng-class="selected" ng-show="isLoginVisible">
+          <div class="background" ng-click="close()"></div>
+          <div class="login-window">
+          <div class="top-border">
+            <div class="exit" ng-click="close()">X</div>
+          </div>
+          <div class="main-window">
+            <form name="Login" class="login-win" novalidate>
+
+              <h3>Login</h3>
+               <div class="form-group">
+                <alert ng-repeat="alert in login.output"  close="login.output.splice(index, 1);"></alert>
+               </div>
+              
+              <div class="form-group">
+                <label>Name</label>
+                <input  type="text" class="form-control tis-text" ng-model="login.name" placeholder="Name" name="Name" required="">
+                <alert type="danger" class="simple-alert" ng-show="(Login.$submitted || Login.Name.$touched) &&Login.Name.$error.required">Required</alert>
+              </div>
 
 
+              <div class="form-group">
+                <label >Password</label>
+                <input type="password" class="form-control tis-text" placeholder="Password" ng-model="login.password" name="Password" required="">
+                <alert type="danger" class="simple-alert" ng-show="(Login.$submitted || Login.Password.$touched) && Login.Password.$error.required">Required</alert>
+              </div>
+
+              <input type="submit" class="tis-button submit-button full-width large" ng-click="accountLogin()"></input>
+            </form>
+            <form name="NewAccount" class="register-win" autocomplete="off" novalidate>
+              <h3>Register</h3>
+
+              <div class="form-group">
+                <alert ng-repeat="alert in NewAccount.output" type="" close="NewAccount.output.splice(index, 1);"></alert>
+               </div>
+
+  
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" ng-model="NewAccount.name" name="Name" class="form-control tis-text" placeholder="Name" verify-username="" ng-model-options="{ debounce: 150 }" required=""/>
+                 <alert type="danger" class="simple-alert" ng-show="(NewAccount.$submitted || NewAccount.Name.$touched) &&NewAccount.Name.$error.required">Required</alert>
+
+                  <alert type="danger" class="simple-alert" ng-show="NewAccount.Name.$pending.verifyUsername">Checking Username</alert>
+                  <alert type="danger" class="simple-alert" ng-show="NewAccount.Name.$error.verifyUsername">Username Already Used</alert>
+              </div>
+        
+
+              <div class="form-group">
+                <label >Password</label>
+                <input type="password" name="Password" ng-change="checkPasswords()" ng-model="NewAccount.password" class="form-control tis-text" placeholder="Password" required="" match="">
+                <alert type="danger" class="simple-alert" ng-show="(NewAccount.$submitted || NewAccount.Password.$touched) &&NewAccount.Password.$error.required">Required</alert>
+                  <alert type="danger" class="simple-alert" ng-show="!IsPassword">Passwords Don't Match</alert>
+              </div>
+
+              <div class="form-group">
+                <label >Re-Enter Password</label>
+                <input type="password"  name="RepeatPassword" ng-change="checkPasswords()" ng-model="NewAccount.repeatPassword" class="form-control tis-text"  placeholder="Password" required="">
+                <alert type="danger" class="simple-alert" ng-show="(NewAccount.$submitted || NewAccount.RepeatPassword.$touched) &&NewAccount.RepeatPassword.$error.required">Required</alert>
+              </div>
+
+               <div class="form-group">
+                 <div class="g-recaptcha" data-sitekey=""></div>
+              </div>
+              <input type="submit" class="tis-button submit-button full-width large" ng-click="createNewAccount()"></input>
+            </form>
+          </div>
+         
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-6"> <button class="tis-button login-button full-width large" ng-click="selected = 'login';">Login</button></div>
+              <div class="col-xs-6"><button class="tis-button new-account-button full-width large" ng-click="selected ='register';">New Account</button></div>
+            </div>
+          </div>
+      </div>
+    </div>#}
+
+    {% block main_nav %}
+      <nav class="border-double border-4 border-t-0 font-sys500 text-[#b5b5b5] bg-[#151819]">
+        <div class="flex items-center justify-between py-4 mx-3">
+          <div>
+            <a class="font-bold text-xl hover:text-white cursor-pointer" href="/">Tis100Share</a>
+            <a class="px-2 hover:text-white cursor-pointer">Problem List</a>
+            <a class="px-2 hover:text-white cursor-pointer">Pad Editor</a>
+            <a class="px-2 hover:text-white cursor-pointer">Problem Editor</a>
+          </div>
+          <div class="flex items-center lg:order-2">
+            <a class="px-2 hover:text-white cursor-pointer">Login / Sign up</a>
+          </div>
+        </div>
+      </nav>
+    {% endblock %}
+    {% block main_content %}{% endblock %}
+    <footer>
+        TIS-100 is ©2015 <a href="http://www.zachtronics.com/tis-100/">Zachtronics LLC</a>. This site is not affiliated with or endorsed by Zachtronics LLC. 
+        tis100share.me is released under the MIT License. <a href="https://github.com/pollend/tis100pad">View the source on GitHub.</a>
+        <div>Donations would be appreciated: <a href="https://www.paypal.me/michaelpollind">Donate</a></div>
+    </footer>
 {% endblock %}

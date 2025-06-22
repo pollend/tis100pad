@@ -1,0 +1,16 @@
+[package]
+name = "tis100"
+version = "0.1.0"
+authors = ["Bill Fraser <wfraser@codewise.org>"]
+edition = "2018"
+
+[dependencies]
+clap = { version = "4.0.2", features = ["derive"] }
+log = "0.4"
+maplit = "1.0.1"
+nom = "7.1"
+num-traits = "0.2"
+num-derive = "0.3"
+rand = "0.8"
+rand_chacha = "0.3"
+stderrlog = "0.5"

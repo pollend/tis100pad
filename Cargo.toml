@@ -7,6 +7,9 @@ edition = "2021"
 name = "dev"
 path = "src/dev.rs"
 
+[dependencies.tis100]
+path = "tis100"
+
 [dependencies]
 axum = {version = "0.8.3", features = ["multipart", "http2"]}
 serde = { version = "1.0", features = ["derive"] }

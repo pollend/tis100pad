@@ -3,20 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script id="il8n" type="application/javascript">
-            window.IL8N = {{ crate::tr::Il8nJson::new(root.tr()) | json | safe }}
-        </script>
-        {% for p in root.manifest().resolve_css("web/index.ts") %}
-            <link rel="stylesheet" crossorigin  href="{{root.base_uri()}}/static/{{p}}"></link>
+        {% for p in manifest().resolve_css("web/index.ts") %}
+            <link rel="stylesheet" crossorigin  href="{{base_uri()}}/static/{{p}}"></link>
         {% endfor %}
-        {% for p in root.manifest().resolve_js("web/index.ts") %}
-            <script type="module" scrossorigin src="{{root.base_uri()}}/static/{{p}}"></script>
+        {% for p in manifest().resolve_js("web/index.ts") %}
+            <script type="module" scrossorigin src="{{base_uri()}}/static/{{p}}"></script>
         {% endfor %}
-        <title>{% block title %}{{root.title()}}{% endblock %}</title>
+        <title>{{title()}}</title>
         {% block header %} {% endblock %}  
     </head>
 
-    <body class="h-full" >
+    <body class="h-full bg-black text-white" >
       {% block content %} {% endblock %}   
     </body>
 </html>
