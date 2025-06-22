@@ -7,10 +7,11 @@ edition = "2021"
 name = "dev"
 path = "src/dev.rs"
 
-[dependencies.tis100]
-path = "tis100"
+[workspace]
+members= ["tis100"]
 
 [dependencies]
+tis100 = { path = "tis100" }
 axum = {version = "0.8.3", features = ["multipart", "http2"]}
 serde = { version = "1.0", features = ["derive"] }
 tokio = { version = "1.0", features = ["full"] }

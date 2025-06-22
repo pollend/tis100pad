@@ -1,4 +1,38 @@
 {% extends "_default.html" %}
 {% block main_content %}
+<main id="{{crate::view::MAIN_ROOT_UID}}" class="flex">
+  <div class="grid grid-cols-4 gap-4 flex-auto py-2 font-sys500">
+    {% for x in (0..4) %}
+      {% for x in (0..4) %}
+        <div class="flex border-double border-4 ">
+          <div class="flex-auto border-double border-r-4"></div>
+          <div class="w-20 flex flex-col text-sm">
+            <div class="flex-auto border-b-4 border-double flex flex-col items-center justify-center">
+              <div>ACC</div>
+              <div>0</div>
+            </div>
+            <div class="flex-auto border-b-4 border-double flex flex-col items-center justify-center">
+              <div>BAK</div>
+              <div>0</div>
+            </div>
+            <div class="flex-auto border-b-4 border-double flex flex-col items-center justify-center">
+              <div>LAST</div>
+              <div>0</div>
+            </div>
+            <div class="flex-auto border-b-4 border-double flex flex-col items-center justify-center">
+              <div>MODE</div>
+              <div>0</div>
+            </div>
+            <div class="flex-auto border-double flex flex-col items-center justify-center">
+              <div>IDLE</div>
+              <div>0</div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% endfor %}
+  </div>
+  <div class="w-40"></div>
+</main>
 {% endblock %}
 

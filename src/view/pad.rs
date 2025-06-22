@@ -2,7 +2,7 @@ use std::sync::Arc;
 
 use askama::Template;
 use async_stream::try_stream;
-use axum::{extract::State, http::request::Parts, response::{Html, IntoResponse}, Router};
+use axum::{extract::State, http::request::Parts, response::{Html, IntoResponse}};
 
 use crate::{common::sse::Sse, state::AppState, view::{route_error::{handle_internal_error, RouteError}, sse_events::{SSEEmpty, SSEForm, SSEMergeFragment}, template::{DefaultBase, DefaultTemplate}}};
 
@@ -13,7 +13,7 @@ pub async fn root(
     sse: Option<SSEForm<SSEEmpty>>,
 ) -> Result<impl IntoResponse, RouteError> {
     #[derive(Template)]
-    #[template(path = "root.html", ext = "html",
+    #[template(path = "pad.html", ext = "html",
         whitespace = "suppress",
         blocks = ["main_content", "main_nav"]
     )]
@@ -63,3 +63,4 @@ pub async fn root(
         }
     }
 }
+

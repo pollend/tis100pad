@@ -9,6 +9,7 @@ services:
       - "3001:3001"
     volumes:
     - ./src:/app/src:ro
+    - ./tis100:/app/tis100:ro
     - ./static:/app/static:ro
     - ./templates:/app/templates:ro
     - ./Cargo.toml:/app/Cargo.toml:ro
